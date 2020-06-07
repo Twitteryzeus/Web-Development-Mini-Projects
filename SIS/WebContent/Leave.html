@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Apply for Leave Here</title>
+</head>
+<body style="background-image: url('IMG-20180608-WA0047.jpg');">
+<script>
+	function Date_Validate()
+	{
+		var date = new Date();
+		var date = new Date((date.getMonth() + 1) + "/" + (date.getDate()) + "/" + date.getFullYear());
+		var date1 = new Date(document.getElementById("sdate").value);
+		
+		if(date > date1)
+		{
+			alert("Only Select Current Date Or Above.");
+		}
+	}
+	
+	function Date_Validate2()
+	{
+		var date = new Date();
+		//var date = new Date((date.getMonth() + 1) + "/" + (date.getDate()) + "/" + date.getFullYear());
+		var date1 = new Date(document.getElementById("sdate").value);
+		var date2 = new Date(document.getElementById("edate").value);
+		
+		if(date2 < date1)
+		{
+			alert("Only Select Current Date Or Above.");
+		}
+	}
+	
+</script>
+<h1 align="center">Apply for Leave</h1>
+<form action="apply" method="get">
+	<p align="center">Leave Reason <select name="reason">
+		<option value="Sick">Sick</option>
+		<option value="Marriage Function">Marriage Function</option>
+		<option value="Attending a funeral">Attending a funeral</option>
+		<option value="Visiting a Doctor">Visiting a Doctor</option>
+		<option value="Going for a movie">Going for a movie</option>
+		<option value="Will be late">Will be late</option>
+		<option value="NSS Activity">NSS Activity</option>
+		<option value="Representing College">Representing College</option>
+		<option value="A College Event">A College Event</option>
+		<option value="Other">Other</option>
+	</select>
+	</p>
+	<p align="center">Starting Date <input type="date" id="sdate" name="sdate" onchange="Date_Validate()"></p>
+	<p align="center">Ending Date <input type="date" id="edate" name="edate" onchange="Date_Validate2()"></p>
+	<p align="center">From <select name="stime">
+		<option value="8:30AM">8:30AM</option>
+		<option value="9:25AM">9:25AM</option>
+		<option value="10:20AM">10:20AM</option>
+		<option value="11:15AM">11:15AM</option>
+		<option value="12:00PM">12:00PM</option>
+		<option value="12:50PM">12:50PM</option>
+		<option value="1:50PM">1:50PM</option>
+		<option value="2:40PM">2:40PM</option>
+	</select>
+	</p>
+	<p align="center">To <select name="etime">
+		<option value="9:25AM">9:25AM</option>
+		<option value="10:20AM">10:20AM</option>
+		<option value="11:15AM">11:15AM</option>
+		<option value="12:00PM">12:00PM</option>
+		<option value="12:50PM">12:50PM</option>
+		<option value="1:40PM">1:40PM</option>
+		<option value="2:40PM">2:40PM</option>
+		<option value="3:30PM">3:30PM</option>
+	</select>
+	</p>
+	<p align="center"><input type="submit" value="submit"></p>
+</form>
+</body>
+</html>
