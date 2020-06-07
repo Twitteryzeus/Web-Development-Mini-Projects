@@ -1,0 +1,18 @@
+create table emp_records
+(
+    empid int primary key auto_increment,
+    flname varchar(50),
+    monum varchar(10),
+    email varchar(30) unique,
+    passwd varchar(16)
+);
+
+create table proj_master
+(
+    projid int primary key auto_increment,
+    empid int references emp_records(empid),
+    projtitle varchar(30),
+    projdesc varchar(100),
+    prjtime int,
+    date varchar(15)
+);
