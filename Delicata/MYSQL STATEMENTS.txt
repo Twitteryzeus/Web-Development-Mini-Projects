@@ -1,0 +1,38 @@
+create table tbl_customer_registration
+(
+	Cust_ID int primary key auto_increment,
+        fname varchar(30),
+        lname varchar(30),
+        mob_no varchar(10),
+        passwd varchar(30)
+);
+
+create table tbl_cake_master
+(
+	cakeid int primary key auto_increment,
+        name varchar(30),
+        price int,
+        category varchar(30) references tbl_category_master(catid)
+);
+
+create table tbl_category_master
+(
+	catid int primary key auto_increment,
+        name varchar(30)
+);
+
+create table tbl_order_master
+(
+    order_id int primary key auto_increment,
+    cust_id int references tbl_customer_registration(Cust_ID),
+    cakeid int references tbl_cake_master(cakeid),
+    price int
+);
+
+create table tbl_cart_master
+(
+    cart_id int primary key auto_increment,
+    cust_id int references tbl_customer_registration(Cust_ID),
+    cakeid int references tbl_cake_master(cakeid),
+    price int
+);
