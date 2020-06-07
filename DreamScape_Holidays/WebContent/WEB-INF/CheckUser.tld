@@ -1,0 +1,22 @@
+<taglib>
+	<tlib-version>1.2</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	
+	<tag>
+	<name>Mycust</name>
+	<tag-class>com.Brij.Checking_User</tag-class>
+	<body-content>empty</body-content>
+	<attribute>
+	<name>uname</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+	<name>pwd</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	</tag>
+
+</taglib>

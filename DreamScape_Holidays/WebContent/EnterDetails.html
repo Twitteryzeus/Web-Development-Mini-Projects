@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter User's Details</title>
+</head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+</style>
+
+<script language="Javascript" type="text/javascript">
+
+        function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode==8)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+
+    </script>
+
+<script language="Javascript" type="text/javascript">
+
+        function onlyNumbers(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 47 && charCode < 58)|| charCode==8)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+
+    </script>
+    
+    
+<body style="background-color: orange;">
+<ul>
+  <li><a href="WelcomeAdmin.jsp">Home</a></li>
+  <li><a href="EnterDetails.html">Enter Details</a></li>
+  <li><a href="ManagePackage.jsp">Manage Package</a></li>
+  <li><a href="FlightDetails.jsp">Flight Details</a></li>
+</ul>
+<form action="ShowPackage.jsp">
+<p align="center">Enter Name <input type="text" name="pname" onkeypress="return onlyAlphabets(event,this);" style="background: transparent; color: white;" required="required"></p>
+<p align="center">Enter Number of person <input type="text" name="total" onkeypress="return onlyNumbers(event,this);" style="background: transparent; color: white;" required="required"></p>
+<p align="center">Enter Budget <input type="text" name="amount" onkeypress="return onlyNumbers(event,this);" style="background: transparent; color: white;" required="required"></p>
+<p align="center"><input type="submit" value="Submit"></p>
+</form>
+</body>
+</html>
