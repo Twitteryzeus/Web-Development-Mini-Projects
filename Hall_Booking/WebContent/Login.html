@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<script language="Javascript" type="text/javascript">
+
+        function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode==8 || charCode==95)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+
+    </script>
+    <script language="Javascript" type="text/javascript">
+
+        function onlyNumbers(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 47 && charCode < 58)|| charCode==8)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+
+    </script>
+<body style="background-image: url('bgimg.jpg');">
+<form action="Login.jsp">
+<p align="center" style="color: white;">Enter Name <input type="text" name="uname" onkeypress="return onlyAlphabets(event,this);" required="required" style="background: transparent; color: black;" ></p>
+<p align="center" style="color: white;">Enter Password <input type="password" name="paswd" onkeypress="return onlyNumbers(event,this);" required="required" style="background: transparent; color: black;" ></p>
+<p align="center"><input type="submit" value="Submit"></p>
+</form>
+</body>
+</html>
